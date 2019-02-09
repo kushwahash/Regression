@@ -1,6 +1,6 @@
 # SimpleLR
 Simple Linear Regression using Python.
-
+https://en.wikipedia.org/wiki/Simple_linear_regression
 #Will follow data processing and doing LR 
 
 #What is SLR - 
@@ -23,3 +23,11 @@ We will try to find the best fitted line going across the input points. This wil
 
   C - where it is cutting the Y
   m - slope , means if it is more then the increase in slary with age is more. If it is less then increment in salary with age is not that much.
+
+  #how we are going to find this line
+  SLR will try to fit the sample data with different sets of line and will give the line where we have the minimum of least square distance.
+
+  Ordinary least square
+  https://en.wikipedia.org/wiki/Ordinary_least_squares
+
+
