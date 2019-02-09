@@ -34,3 +34,23 @@ slr.fit(X_train,y_train)
 
 y_pred = slr.predict(X_test)
 
+#Visualize (show) the training set results this will show points
+plt.scatter(X_train,y_train,color = 'red')
+#visualize the Train this will show the line which is predicted
+plt.plot(X_train,slr.predict(X_train),color = 'blue')
+#add a Title to better understand
+plt.title('Salary vs Age (Experience) Training Set')
+plt.xlabel('Age (Experience)')
+plt.ylabel('Salary')
+plt.show()
+
+
+#Visualize (show) the test set results this will show points
+plt.scatter(X_test,y_test,color = 'red')
+#visualize the test this will show the line which is predicted
+plt.plot(X_train,slr.predict(X_train) ,color = 'blue')
+#add a Title to better understand
+plt.title('Salary vs Age (Experience) Training Set')
+plt.xlabel('Age (Experience)')
+plt.ylabel('Salary')
+plt.show()
