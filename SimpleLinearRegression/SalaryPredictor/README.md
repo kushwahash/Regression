@@ -2,6 +2,7 @@
 
 Y - Salary, which we have to find
 X - Age
+Y = mX + C
 
 We will try to find the best fitted line going across the input points. This will give us a equation which can be used to find Y provided the X value.
 
