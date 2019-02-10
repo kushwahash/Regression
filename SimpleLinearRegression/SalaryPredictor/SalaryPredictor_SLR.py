@@ -26,6 +26,7 @@ X_test = sc_X.transform(X_test)
 #import the needed library
 from sklearn.linear_model import LinearRegression
 slr = LinearRegression()
+
 #fit the training data Independent -X, dependent - y which we have created earlier
 #This will create the SLR model which can be used to predict the test set
 slr.fit(X_train,y_train)

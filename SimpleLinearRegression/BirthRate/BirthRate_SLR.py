@@ -1,6 +1,6 @@
 #Data preprocessing Start
 
-import numpy as np
+
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -11,15 +11,32 @@ X = dataset.iloc[:, 1].values
 #Using Third Column,Brth15to17 as Dependent variable. 
 y = dataset.iloc[:, 2].values
 
-
 #split the dataset into training set and test set
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=1/5,random_state=0)
 
-#Visualize (show) the actual data set. We can take a look and see if using SLR is a good idea (Slope)
-plt.scatter(X,y,color = 'red')
-#add a Title to better understand
-plt.title('Poverty vs Teen Birth (Age15to17) Training Set (Actual Data)')
-plt.xlabel('Poverty')
-plt.ylabel('Teen Birth')
-plt.show()
+
+#import the SLR library
+from sklearn.linear_model import LinearRegression
+slr_birth = LinearRegression()
+#making it 2d array
+X_train = X_train.reshape(-1,1)
+slr_birth.fit(X_train,y_train)
+
+#use the model created to predict the test data.
+y_pred_train = slr_birth.predict(X_train)
+
+print("++++ Running model on Training Data ++++")
+for i in range(0,len(y_train)):
+    print("Actual :: {}, Predicted :: {:.1f}".format(y_train[i],y_pred_train[i]))
+
+#Run the model on test set
+X_test = X_test.reshape(-1,1)
+y_pred_test = slr_birth.predict(X_test)
+print("++++ Predicting Test Data +++++")
+for i in range(0,len(y_test)):
+    print("Actual :: {}, Predicted :: {:.1f}".format(y_train[i],y_pred_test[i]))
+
+#visualize the data and the predicted line
+
+
