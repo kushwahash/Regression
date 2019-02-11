@@ -26,6 +26,19 @@ X = X[:,1:]
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=1/5,random_state=0)
 
+#fitting the data into MLR
+
+from sklearn.linear_model import LinearRegression
+startup_mlr = LinearRegression()
+
+startup_mlr.fit(X_train,y_train)
+
+#model created, lets test the model
+y_pred = startup_mlr.predict(X_test)
+
+print("++++ Predicting Test Data +++++")
+for i in range(0,len(y_test)):
+    print("Actual :: {}, Predicted :: {:.1f}".format(y_train[i],y_pred_test[i]))
 
 
 
