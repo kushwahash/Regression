@@ -34,7 +34,7 @@ startup_mlr = LinearRegression()
 startup_mlr.fit(X_train,y_train)
 
 #model created, lets test the model
-y_pred = startup_mlr.predict(X_test)
+y_pred_test = startup_mlr.predict(X_test)
 
 print("++++ Predicting Test Data +++++")
 for i in range(0,len(y_test)):
