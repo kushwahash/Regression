@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import utility.utils as utl
 #read the file
 dataset = pd.read_csv("50_Startups.csv")
 #set the independent and dependent variable
@@ -33,12 +34,17 @@ startup_mlr = LinearRegression()
 
 startup_mlr.fit(X_train,y_train)
 
-#model created, lets test the model
+#model created, lets test the model on test data
 y_pred_test = startup_mlr.predict(X_test)
 
-print("++++ Predicting Test Data +++++")
-for i in range(0,len(y_test)):
-    print("Actual :: {}, Predicted :: {:.1f}".format(y_train[i],y_pred_test[i]))
+utl.print_actual_predicted(y_test,y_pred_test,True)
+
+#model created, lets test the model on training data
+y_pred_train = startup_mlr.predict(X_train)
+
+utl.print_actual_predicted(y_train,y_pred_train,True)
+
+
 
 
 

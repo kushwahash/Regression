@@ -9,3 +9,9 @@ In this project we are going to learn different regression algorithms.
 
 2. Multiple Linear Regression.
   2.a) 
+
+
+
+
+Note : if you are facing issue using the util function. Set the path 
+export PYTHONPATH=pathtoRegressionfolder
