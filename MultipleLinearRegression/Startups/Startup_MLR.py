@@ -15,6 +15,7 @@ from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 labelEnc_X = LabelEncoder()
 #country is at index 3
 X[:,3] = labelEnc_X.fit_transform(X[:,3])
+#you might want to check for categories='auto'
 onehotEnc = OneHotEncoder(categorical_features=[3])
 X = onehotEnc.fit_transform(X).toarray()
 
